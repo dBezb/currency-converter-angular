@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CurrencyHeaderComponent } from './components/currency-header/currency-header.component';
+import { CurrencyConverterComponent } from './components/currency-converter/currency-converter.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
+  standalone: true, 
+  imports: [CurrencyHeaderComponent, CurrencyConverterComponent], 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'my-angular-project';

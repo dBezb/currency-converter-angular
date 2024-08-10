@@ -1,0 +1,45 @@
+$primary-color: #007bff;
+$background-color: #f8f9fa;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+  
+    .converter-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      .currency-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $primary-color;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        
+      }
+  
+      .currency-input, .currency-select {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+          box-shadow: 0 0 5px rgba($primary-color, 0.5);
+        }
+      }
+      
+      .currency-select {
+        background-color: #fff;
+      }
+    }
+  }
