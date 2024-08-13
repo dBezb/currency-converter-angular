@@ -10,5 +10,5 @@ import { CurrencyConverterComponent } from './components/currency-converter/curr
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-angular-project';
+  title = 'currency-converter-angular';
 }

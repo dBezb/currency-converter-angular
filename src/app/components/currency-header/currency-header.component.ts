@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from '../../services/currency.service';
 import { CommonModule } from '@angular/common';
+
+import { firstValueFrom } from 'rxjs';
+
+import { CurrencyService } from '../../services/currency.service';
 
 @Component({
   selector: 'app-currency-header',
@@ -21,7 +24,7 @@ export class CurrencyHeaderComponent implements OnInit {
 
   async loadExchangeRates() {
     try {
-      const rates = await this.currencyService.getRatesToUAH();
+      const rates = await firstValueFrom(this.currencyService.getRatesToUAH());
       this.usdToUah = rates.USD;
       this.eurToUah = rates.EUR;
     } catch (error) {

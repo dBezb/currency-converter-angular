@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { firstValueFrom } from 'rxjs';
+
 import { CurrencyService } from '../../services/currency.service';
 
 @Component({
@@ -27,7 +30,7 @@ export class CurrencyConverterComponent implements OnInit {
 
   async loadExchangeRates() {
     try {
-      const data = await this.currencyService.getExchangeRates();
+      const data = await firstValueFrom(this.currencyService.getExchangeRates());
       this.exchangeRates = data.conversion_rates;
       this.convertCurrency1(); 
     } catch (error) {
