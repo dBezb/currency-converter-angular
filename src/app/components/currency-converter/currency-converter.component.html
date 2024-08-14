@@ -1,7 +1,7 @@
 <div class="converter-container">
     <div class="converter-section">
         <label for="currency1" class="currency-label">From:</label>
-        <input type="number" [(ngModel)]="amount1" (ngModelChange)="convertCurrency1()" class="currency-input">
+        <input type="number" min="0" [(ngModel)]="amount1" (ngModelChange)="convertCurrency1()" class="currency-input">
         <select [(ngModel)]="currency1" (ngModelChange)="onCurrencyChange()" class="currency-select">
             <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
         </select>
@@ -9,7 +9,7 @@
 
     <div class="converter-section">
         <label for="currency2" class="currency-label">To:</label>
-        <input type="number" [(ngModel)]="amount2" (ngModelChange)="convertCurrency2()" class="currency-input">
+        <input type="number" min="0" [(ngModel)]="amount2" (ngModelChange)="convertCurrency2()" class="currency-input">
         <select [(ngModel)]="currency2" (ngModelChange)="onCurrencyChange()" class="currency-select">
             <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
         </select>
